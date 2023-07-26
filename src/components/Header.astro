@@ -1,24 +1,26 @@
 ---
 import HeaderLink from './HeaderLink.astro';
-import { SITE_TITLE } from '../consts';
+
 ---
 
 <header class=" text-center">
 	
-		<div class="top-section my-4 space-y-4 md:flex items-center justify-center gap-6">
+		<div class="top-section my-4 space-y-4 lg:flex items-center justify-center gap-6">
 			<div class="header-frame grid place-content-center">
 				<h1 class=" text-4xl">Santosh Yadav</h1>
 				<h2 class="text-gray-400 text-xl w-[18ch] text-left">Software engineer in Nepal</h2>
 			</div>
-			<div class="   ">
-				<img class="block w-[100%] max-w-[600px]  rounded-xl " id="propic" src="/placeholder-about.jpg" alt="">
+			<div class=" grid place-content-center">
+				<img class="block w-[100%] max-w-[200px]  rounded-full  " id="propic" src="/profile.JPG" alt="">
+				<!-- <img
+				class="block w-[100%] max-w-[250px]  rounded-full  " id="propic" src="https://scontent.fbhr4-1.fna.fbcdn.net/v/t39.30808-6/355286145_1335139257419739_8708189393244398112_n.jpg?_nc_cat=110&cb=99be929b-59f725be&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=aYA69ulxLQYAX_sYsCF&_nc_ht=scontent.fbhr4-1.fna&oh=00_AfB4l5onahd-V5Y2q9gcIp4awrJeXWPNx3L9XEw2vltzkA&oe=64C5A4ED" alt=""> -->
 			</div>
 		</div>
 	
 	
 	<nav class="flex gap-3 justify-center text-xl">
 		<HeaderLink href="/">Home</HeaderLink>
-		<HeaderLink href="/blog">Blog</HeaderLink>
+		<HeaderLink href="/blogs">Blog</HeaderLink>
 		<HeaderLink href="/about">About</HeaderLink>
 		
 	</nav>
