@@ -1,55 +1,54 @@
 ---
-import type { CollectionEntry } from 'astro:content';
-
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import FormattedDate from '../components/FormattedDate.astro';
-
-type Props = CollectionEntry<'blog'>['data'];
-
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+const { frontmatter } = Astro.props;
+const { title, pubDate, description, image } = frontmatter;
 ---
 
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<title>{title}</title>
-		<meta name="description" content={description} />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href="/global.css" />
-		<style>
-			.title {
-				font-size: 2em;
-				margin: 0.25em 0 0;
-			}
-			hr {
-				border-top: 1px solid #ddd;
-				margin: 1rem 0;
-			}
-			.last-updated-on {
-				font-style: italic;
-			}
-		</style>
-	</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <!-- <Header /> -->
 
-	<body>
-		<Header />
-		<main>
-			<article>
-				{heroImage && <img width={720} height={360} src={heroImage} alt="" />}
-				<h1 class="title">{title}</h1>
-				<FormattedDate date={pubDate} />
-				{
-					updatedDate && (
-						<div class="last-updated-on">
-							Last updated on <FormattedDate date={updatedDate} />
-						</div>
-					)
-				}
-				<hr />
-				<slot />
-			</article>
-		</main>
-		<Footer />
-	</body>
+    <main>
+      <h1 class="px-4">{title}</h1>
+      <p class="opacity-50 px-4">{pubDate}</p>
+      <slot />
+    </main>
+    <Footer />
+  </body>
 </html>
+
+<style is:global>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, segoe ui, Roboto, Oxygen,
+      Ubuntu, Cantarell, open sans, helvetica neue, sans-serif;
+  }
+  main {
+    text-wrap: balance;
+
+    width: clamp(300px, 60%, 80%);
+    margin: 0 auto;
+    padding: 1rem;
+  }
+  main h1 {
+    color: black;
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  main img {
+    width: 100%;
+    border-radius: 1em;
+    margin: 1em 0;
+  }
+  main p {
+    color: #333;
+    font-size: 1.2rem;
+    line-height: 1.5;
+  }
+</style>

@@ -1,35 +1,32 @@
 ---
-
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		
-	</head>
-	<body>
-		<Header title={SITE_TITLE} />
-		<main class="grid place-content-center">
-			<p  class="max-w-[65ch] m-2">
-				Hi there! My name is <b>Santosh.</b> I'm 2nd year CE student at KU! I'm also a Web developer and programmer, developer experience begineer--intermediate, and huge cinema lover. I enjoy building websites, playing music, and playing sports in my free time.
-			</p>
-			
-			
-		</main>
-		<Footer />
-	</body>
+  <head> </head>
+  <body>
+    <Header title="Okay" />
+    <main class="grid place-content-center">
+      <p class="max-w-[65ch] m-2">
+        Hi there! My name is <b>Santosh.</b> I'm 2nd year CE student at KU! I'm also
+        a Web developer and programmer, developer experience begineer--intermediate,
+        and huge cinema lover. I enjoy building websites, playing music, and playing
+        sports in my free time.
+      </p>
+    </main>
+    <Footer />
+  </body>
 </html>
 
 <style>
-	body{
-		font-family: "Roboto Mono", monospace;	
-		
-		color: #333;
-}
-	b{
-		color: #62ff00;
-	}
+  body {
+    font-family: Roboto;
+
+    color: #333;
+  }
+  b {
+    color: #62ff00;
+  }
 </style>
