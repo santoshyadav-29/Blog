@@ -1,0 +1,33 @@
+---
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+const allPosts = await Astro.glob("../pages/blog/*.md");
+---
+<header>
+    <Header />
+    <div class="mt-10">
+      <ul>
+        {
+          allPosts.map((post) => (
+            <li>
+              <a
+                class=" grid place-content-center justify-center  hover:cursor-pointer "
+                href={post.url}
+              >
+                <img
+                  class=" max-w-[35rem]"
+                  src={post.frontmatter.heroImage}
+                  alt=""
+                />
+                <h1 class=" p-2 font-bold   hover:underline hover:opacity-50">
+                  {post.frontmatter.title}
+                </h1>
+                <p class="p-2   max-w-[55ch]">{post.frontmatter.description}</p>
+                <p class="p-2  text-gray-500">{post.frontmatter.pubDate}</p>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+    <Footer />
