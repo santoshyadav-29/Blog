@@ -5,7 +5,7 @@ const allPosts = await Astro.glob("../pages/blog/*.md");
 ---
 
     <Header />
-    <!-- <div class="mt-10">
+    <div class="mt-10">
       <ul>
         {
           allPosts.map((post) => (
@@ -29,5 +29,7 @@ const allPosts = await Astro.glob("../pages/blog/*.md");
           ))
         }
       </ul>
-    </div> -->
+    </div>
+
+
     <Footer />
