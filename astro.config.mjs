@@ -1,7 +1,7 @@
 import { defineConfig } from 'astro/config';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
-import netlify from "@astrojs/netlify/functions";
+
 
 import tailwind from "@astrojs/tailwind";
 
@@ -10,5 +10,5 @@ export default defineConfig({
   site: 'https://example.com',
   integrations: [mdx(), sitemap(), tailwind()],
   output: "server",
-  adapter: netlify()
+  
 });
